@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/realestateproject2/static/css/main.1426ecba.css",
-    "main.js": "/realestateproject2/static/js/main.328626b7.js",
+    "main.js": "/realestateproject2/static/js/main.91b8d35d.js",
+    "static/js/483.594afe57.chunk.js": "/realestateproject2/static/js/483.594afe57.chunk.js",
     "static/js/787.cda612ba.chunk.js": "/realestateproject2/static/js/787.cda612ba.chunk.js",
     "static/media/mapSatellite.png": "/realestateproject2/static/media/mapSatellite.dedfcd00b22f76f27b3c.png",
     "static/media/mapDrawn.png": "/realestateproject2/static/media/mapDrawn.2f5aacadca7b3fd35f12.png",
@@ -12,11 +13,12 @@
     "static/media/MapPinHouse.svg": "/realestateproject2/static/media/MapPinHouse.2c13e84bb2edfac5b9cf98421b2b777e.svg",
     "static/media/MapPinHouseHover.svg": "/realestateproject2/static/media/MapPinHouseHover.e0bcff65d6695e3224833480a39b5fbc.svg",
     "main.1426ecba.css.map": "/realestateproject2/static/css/main.1426ecba.css.map",
-    "main.328626b7.js.map": "/realestateproject2/static/js/main.328626b7.js.map",
+    "main.91b8d35d.js.map": "/realestateproject2/static/js/main.91b8d35d.js.map",
+    "483.594afe57.chunk.js.map": "/realestateproject2/static/js/483.594afe57.chunk.js.map",
     "787.cda612ba.chunk.js.map": "/realestateproject2/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1426ecba.css",
-    "static/js/main.328626b7.js"
+    "static/js/main.91b8d35d.js"
   ]
 }
