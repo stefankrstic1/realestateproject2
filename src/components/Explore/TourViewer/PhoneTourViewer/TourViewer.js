@@ -169,7 +169,7 @@ function TourViewer(props) {
               >
                 <MapIcon fontSize="small" />
                 <Typography variant="body1" sx={{ marginX: 0.5 }}>
-                  Mapa{" "}
+                  Mapa
                 </Typography>
                 {/* <Grid
                   container

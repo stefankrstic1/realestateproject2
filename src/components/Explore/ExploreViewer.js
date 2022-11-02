@@ -9,13 +9,20 @@ import TourViewer from "./TourViewer/PhoneTourViewer/TourViewer";
 import { Provider, atom, useAtom } from "jotai";
 import MapViewer from "./MapViewer/PhoneMapViewer/MapViewer";
 
+import gestureShow from "../../assets/NarednaTura.png";
+
 import { usingMapAtom } from "../../atoms.js";
 import { usingSizeWindow } from "../../atoms.js";
-import { Box } from "@mui/material";
+import { Box, Button, Popover } from "@mui/material";
 
 function ExploreViewer() {
   const [usingMap, setUsingMap] = useAtom(usingMapAtom);
   const [usingSize, setUsingSize] = useAtom(usingSizeWindow);
+  const [gestureInfoShown, setGestureInfoShown] = useState(false);
+
+  const onClickRemoveGestureInfo = () => {
+    setGestureInfoShown(true);
+  };
 
   const componentRef = useRef();
 
@@ -64,7 +71,31 @@ function ExploreViewer() {
       <Box ref={componentRef}>
         {!usingMap && (
           <Fragment>
-            <TourViewer height={height}></TourViewer>
+            <Box>
+              {!gestureInfoShown && (
+                <Button
+                  sx={{
+                    borderRadius: "0px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    position: "absolute",
+                    bottom: "55px",
+                    left: `${width / 2 - 180}` + "px",
+                    zIndex: 2,
+
+                    width: "360px",
+                    height: "160px",
+                  }}
+                  disableRipple
+                  onClick={onClickRemoveGestureInfo}
+                >
+                  <img src={gestureShow} style={{width: "100%", height: "100%", objectF: "contain"}}></img>
+                </Button>
+              )}
+
+              <TourViewer height={height}></TourViewer>
+            </Box>
           </Fragment>
         )}
         {usingMap && height && <MapViewer height={height}></MapViewer>}

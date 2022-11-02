@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import WelcomePage from "./pages/WelcomePage";
 import Layout from "./components/Layout/Layout";
 import {
@@ -123,6 +123,7 @@ function App() {
           <Route path="/mojeture" element={<MyToursPage />} />
           <Route path="/poruke" element={<MessagesPage />} />
           <Route path="/profil" element={<ProfilePage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
     </ThemeProvider>

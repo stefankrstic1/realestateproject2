@@ -8,6 +8,7 @@ import {
   Button,
   Card,
   CardActionArea,
+  Popover,
 } from "@mui/material";
 import React, { Fragment } from "react";
 import Tour from "../Tour";
@@ -76,7 +77,7 @@ function TourCard(props) {
             }}
             display="flex"
             alignItems="center"
-          >
+          >          
             <Grid
               maxWidth={500}
               container
