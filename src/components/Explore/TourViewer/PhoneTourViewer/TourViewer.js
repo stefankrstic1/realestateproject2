@@ -68,14 +68,14 @@ const TURE_PODACI = [
     ulica: "Bulevar Cara Lazara",
     grad: "Novi Sad",
   },
-  // {
-  //   tura: "",
-  //   cena: "550",
-  //   kvadratura: "45",
-  //   sobnost: "2.5",
-  //   ulica: "Bulevar Cara Lazara",
-  //   grad: "Novi Sad",
-  // },
+  {
+    tura: "7l1x8",
+    cena: "550",
+    kvadratura: "45",
+    sobnost: "2.5",
+    ulica: "Bulevar Cara Lazara",
+    grad: "Novi Sad",
+  },
 ];
 
 function TourViewer(props) {

@@ -15,8 +15,8 @@ import React, { Fragment, useState } from "react";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import ApartmentRoundedIcon from "@mui/icons-material/ApartmentRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
-import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
-import StoreIcon from '@mui/icons-material/Store';
+import LocationCityOutlinedIcon from "@mui/icons-material/LocationCityOutlined";
+import StoreIcon from "@mui/icons-material/Store";
 
 import { NavLink } from "react-router-dom";
 
@@ -147,6 +147,7 @@ function Questionnaire() {
     "svetao",
     "klima",
     "lift",
+    "sa terasom",
   ];
 
   const [typeQuestionnareSelection, setTypeQuestionnareSelection] =
@@ -307,7 +308,7 @@ function Questionnaire() {
                       size="small"
                       key={val}
                     >
-                      <Box sx={{ paddingX: 1 }}>{val}</Box>
+                        <Box sx={{ paddingX: 1 }}>{val}</Box>
                     </MyCharacteristicsButton>
                   );
                 })}

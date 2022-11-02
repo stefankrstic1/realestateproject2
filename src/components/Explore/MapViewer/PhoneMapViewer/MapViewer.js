@@ -10,6 +10,7 @@ import React, {
 import Map, { Layer, Marker, Source, SymbolLayer, Popup } from "react-map-gl";
 
 import "mapbox-gl/dist/mapbox-gl.css";
+
 import Pin from "./Pin";
 
 import CustomIcons from "../../../../customicons";
@@ -22,7 +23,7 @@ import {
   unclusteredBuildingPointLayer,
   unclusteredHousePointLayer,
 } from "./ClusterLayers";
-import mapboxgl, { GeoJSONSource } from "mapbox-gl";
+
 import {
   Box,
   Button,
@@ -30,6 +31,7 @@ import {
   requirePropFactory,
   Typography,
 } from "@mui/material";
+
 import mapDrawn from "../../../../assets/mapDrawn.png";
 import mapSatellite from "../../../../assets/mapSatellite.png";
 
@@ -38,6 +40,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { ReactMapboxGl } from "react-map-gl";
 import { usingMapAtom } from "../../../../atoms";
 import { useAtom } from "jotai";
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import mapboxgl from "mapbox-gl";
+mapboxgl.workerClass =
+  require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default; //eslint-disable-line
 
 mapboxgl.accessToken =
   "pk.eyJ1Ijoia3JzcGFrIiwiYSI6ImNsOW9iMzc0cDBnZjIzcG56bmt5dGJmNWUifQ.EiiLSVPEYLnOOMAPeedp2w";
@@ -151,7 +158,7 @@ function MapViewer(props) {
       const coordinates = e.features[0].geometry.coordinates.slice();
       console.log(coordinates);
 
-      map.flyTo({
+      map.easeTo({
         center: coordinates,
         duration: 1000,
       });
@@ -161,7 +168,7 @@ function MapViewer(props) {
       const coordinates = e.features[0].geometry.coordinates.slice();
       console.log(coordinates);
 
-      map.flyTo({
+      map.easeTo({
         center: coordinates,
         duration: 1000,
       });
@@ -406,9 +413,21 @@ function MapViewer(props) {
               setStyleMap((current) => !current);
             }}
             variant="contained"
-            sx={{ width: "100px" }}
+            sx={{
+              width: "80px",
+              height: "60px",
+              background: `url(${!styleMap ? mapSatellite : mapDrawn})`,
+              textTransform: "capitalize",
+              fontWeight: 'bold',
+            }}
           >
-            {!styleMap ? "Satellite" : "Map"}
+            <Typography
+              variant="body2"
+              color={!styleMap ? "#ffffff" : "#000000"}
+              sx={{position: "absolute", bottom: 5, fontWeight: 'bold'}}
+            >
+              {!styleMap ? "Satellite" : "Map"}
+            </Typography>
           </Button>
         </Box>
         <Box
@@ -445,8 +464,7 @@ function MapViewer(props) {
             height: props.height - 60,
             textAlign: "center",
           }}
-        >
-        </div>
+        ></div>
       </Box>
     </Fragment>
     // <Map
